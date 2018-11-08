@@ -5,21 +5,22 @@
 
 int main(void) {
 	
-	int x=10;
-	int y=20;
+	int grade[5] = {10, 20, 30, 40, 50};
+	int average=0;
 	int *ptr;
 	
-	ptr = &x;
-	printf("ptr value : %i\n", *ptr);
+	int i;
 	
-	ptr = &y;
-	printf("ptr value : %i\n", *ptr);
+	//pointer setting
+	ptr = grade;
 	
-	ptr = &x;
-	printf("ptr value : %i\n", *ptr);
+	//average calculation
+	for (i=0;i<5;i++)
+	{
+		average += *(ptr+i); //ptr[i]
+	}
 	
-	*ptr = 20;
-	printf("x value : %i\n", x);
-	
+	printf("average : %i\n", average/5);
+		
 	return 0;
 }
